@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#9E5F72">
+<title>Rouse — Estética Facial y Corporal</title>
+<style>
+/* ─── RESET ─── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%;height:auto}
+
+/* ─── VARIABLES ─── */
+:root{
+  --rose:#C4899A;
+  --rose-l:#EDD5DC;
+  --rose-d:#9E5F72;
+  --gold:#C8A96E;
+  --gold-l:#EBD9B4;
+  --terra:#7A5347;
+  --cream:#FDF5F0;
+  --dark:#2C1A14;
+  --gray:#6B5B55;
+  --serif:Georgia,'Palatino Linotype',Palatino,serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+
+/* ─── BASE ─── */
+body{font-family:var(--sans);background:var(--cream);color:var(--dark);overflow-x:hidden;font-size:16px;line-height:1.5}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0.9rem 1.2rem;
+  background:rgba(253,245,240,0.97);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(196,137,154,0.2);
+  box-shadow:0 2px 12px rgba(0,0,0,0.06);
+}
+.nav-logo{font-family:var(--serif);font-size:1.5rem;color:var(--rose-d);letter-spacing:2px;text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-ig{
+  font-size:0.72rem;letter-spacing:1px;text-transform:uppercase;
+  color:var(--rose-d);text-decoration:none;
+  border:1px solid var(--rose-d);padding:0.4rem 0.9rem;
+}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:100svh;
+  background:linear-gradient(160deg,#F9EEF1 0%,#EDD5DC 50%,#F2E0D5 100%);
+  padding:5.5rem 1.4rem 3rem;
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:'';position:absolute;top:-20%;right:-30%;
+  width:300px;height:300px;
+  background:radial-gradient(circle,rgba(200,169,110,0.15) 0%,transparent 70%);
+  border-radius:50%;pointer-events:none;
+}
+.eyebrow{
+  font-size:0.68rem;letter-spacing:5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;display:block;
+}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(2.4rem,9vw,4rem);
+  line-height:1.1;color:var(--rose-d);
+  margin-bottom:1.2rem;
+}
+.hero-title em{font-style:italic;color:var(--terra)}
+.divider{width:48px;height:2px;background:var(--gold);margin:0 auto 1.4rem}
+.hero-sub{
+  font-size:0.95rem;line-height:1.75;color:var(--gray);
+  font-weight:300;max-width:340px;margin:0 auto 2rem;
+}
+.hero-photo-wrap{position:relative;margin:0 auto 1.5rem;width:min(280px,75vw)}
+.hero-photo{
+  width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;
+  border-radius:55% 45% 42% 58% / 48% 52% 48% 52%;
+  box-shadow:0 20px 60px rgba(122,83,71,0.25);
+}
+.hero-badge{
+  position:absolute;bottom:-16px;right:-12px;
+  background:white;padding:0.8rem 1.2rem;
+  border-left:3px solid var(--gold);
+  box-shadow:0 8px 25px rgba(0,0,0,0.12);
+  text-align:left;
+}
+.badge-name{font-family:var(--serif);font-size:0.95rem;color:var(--rose-d)}
+.badge-role{font-size:0.65rem;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin-top:0.2rem}
+.hero-btns{display:flex;flex-direction:column;gap:0.8rem;width:100%;max-width:280px;margin:1.5rem auto 0}
+.btn{
+  display:block;text-align:center;text-decoration:none;
+  font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;
+  padding:1rem 1.5rem;font-weight:700;
+  border:none;cursor:pointer;
+  -webkit-appearance:none;
+}
+.btn-p{background:var(--rose-d);color:#fff}
+.btn-o{border:1.5px solid var(--rose-d);color:var(--rose-d);background:transparent}
+
+/* ─── QUOTE ─── */
+.quote{
+  background:var(--rose-d);
+  padding:3rem 1.5rem;text-align:center;
+}
+.quote-txt{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(1.15rem,4vw,1.7rem);
+  color:#fff;line-height:1.55;max-width:600px;margin:0 auto;
+}
+.quote-attr{color:var(--gold-l);font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;margin-top:1.2rem}
+
+/* ─── SECTION BASE ─── */
+.sec{padding:3.5rem 1.4rem}
+.sec-dark{background:var(--dark);padding:3.5rem 1.4rem}
+.sec-pink{background:#F5E6EA;padding:3.5rem 1.4rem}
+.sec-white{background:#fff;padding:3.5rem 1.4rem}
+.sec-title{
+  font-family:var(--serif);
+  font-size:clamp(1.7rem,5vw,2.4rem);
+  color:var(--rose-d);margin-bottom:0.6rem;line-height:1.2;
+}
+.sec-lead{font-size:0.9rem;line-height:1.75;color:var(--gray);font-weight:300}
+
+/* ─── BRIYITTE SECTION ─── */
+.bri-photos{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:2rem}
+.bri-photos img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top}
+.bri-photos img:first-child{grid-column:1/-1;aspect-ratio:4/3}
+.creds{margin-top:1.8rem;display:flex;flex-direction:column;gap:1.2rem}
+.cred{display:flex;gap:1rem;align-items:flex-start}
+.cred-ic{
+  width:38px;height:38px;min-width:38px;
+  background:var(--rose-l);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:0.95rem;
+}
+.cred-h{font-family:var(--serif);font-size:0.92rem;color:var(--dark);margin-bottom:0.2rem}
+.cred-p{font-size:0.8rem;color:var(--gray);line-height:1.4}
+
+/* ─── FACIAL CARDS ─── */
+.facial-cards{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem}
+.fcard{background:#fff;box-shadow:0 4px 20px rgba(139,99,88,.08);overflow:hidden}
+.fcard-head{padding:1.5rem 1.4rem;color:#fff;background:var(--rose-d)}
+.fcard-head.t{background:var(--terra)}
+.fcard-head.d{background:#4A2830}
+.fcard-head h3{font-family:var(--serif);font-size:1.2rem}
+.fcard-price{font-size:2rem;font-weight:900;color:var(--gold-l);margin:0.3rem 0 0.1rem}
+.fcard-dur{font-size:0.72rem;opacity:0.8;letter-spacing:1px}
+.fcard-body{padding:1.2rem 1.4rem}
+.fcard-sub{font-size:0.8rem;color:var(--gray);font-style:italic;margin-bottom:0.8rem}
+.fcard-list{list-style:none}
+.fcard-list li{
+  padding:0.5rem 0;border-bottom:1px solid var(--rose-l);
+  font-size:0.86rem;color:var(--gray);
+  display:flex;align-items:center;gap:0.5rem;
+}
+.fcard-list li:last-child{border:none}
+.fcard-list li::before{content:'✓';color:var(--gold);font-weight:bold;flex-shrink:0}
+
+/* ─── PRICE TABLES ─── */
+.ptbl{background:#fff;padding:1.5rem;margin-top:1.2rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.ptbl h3{
+  font-family:var(--serif);font-size:1.1rem;color:var(--rose-d);
+  padding-bottom:0.75rem;border-bottom:2px solid var(--gold);margin-bottom:0.3rem;
+}
+.prow{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0.65rem 0;border-bottom:1px solid rgba(196,137,154,.12);gap:0.5rem;
+}
+.prow:last-child{border:none}
+.prow .srv{font-size:0.84rem;color:var(--dark);line-height:1.4}
+.prow .srv small{display:block;font-size:0.72rem;color:var(--gray);margin-top:0.1rem}
+.prow .prx{font-weight:700;color:var(--rose-d);font-size:1rem;white-space:nowrap;margin-left:0.5rem}
+
+/* ─── SPLIT IMAGE ─── */
+.split-img-full{width:100%;height:260px;object-fit:cover;object-position:center}
+.split-text{padding:2rem 1.4rem}
+.split-kicker{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--rose-d);margin-bottom:0.8rem}
+
+/* ─── PROGRAMS (dark) ─── */
+.prog-cards{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem}
+.prog-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(196,137,154,.2);
+  padding:2rem 1.4rem;position:relative;overflow:hidden;
+}
+.prog-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:3px;background:var(--gold);
+}
+.prog-card h3{font-family:var(--serif);font-size:1.3rem;color:#EDD5DC;margin-bottom:0.8rem}
+.prog-card p{font-size:0.86rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:1rem}
+.prog-badge{
+  font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--gold);
+  padding:0.4rem 0.9rem;display:inline-block;margin-bottom:1rem;
+}
+.prog-list{list-style:none}
+.prog-list li{
+  font-size:0.82rem;color:rgba(255,255,255,.7);
+  padding:0.25rem 0;display:flex;gap:0.5rem;align-items:flex-start;
+}
+.prog-list li::before{content:'◆';color:var(--gold);font-size:0.4rem;margin-top:0.35rem;flex-shrink:0}
+.dark-title{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.4rem);color:#EDD5DC;margin-bottom:0.6rem}
+.dark-lead{font-size:0.9rem;color:rgba(255,255,255,.65);line-height:1.75}
+
+/* ─── TREATMENTS GRID ─── */
+.treats{display:flex;flex-direction:column;gap:0.9rem;margin-top:2rem}
+.treat{
+  background:#fff;padding:1.1rem 1.4rem;
+  display:flex;justify-content:space-between;align-items:center;
+  border-left:3px solid var(--rose);
+}
+.treat-n{font-size:0.88rem;color:var(--dark)}
+.treat-n small{display:block;font-size:0.75rem;color:var(--gray);margin-top:0.15rem}
+.treat-p{font-weight:700;color:var(--rose-d);font-size:1rem;white-space:nowrap;margin-left:0.8rem}
+.note{
+  background:var(--rose-l);border-left:4px solid var(--rose-d);
+  padding:1rem 1.3rem;margin-top:1.5rem;
+  font-size:0.84rem;color:var(--rose-d);font-style:italic;
+}
+
+/* ─── TECH LIST ─── */
+.tech-list{list-style:none;margin-top:1.8rem;display:flex;flex-direction:column;gap:0.8rem}
+.tech-item{
+  background:var(--cream);padding:1rem 1.3rem;
+  border-right:3px solid var(--gold);
+  display:flex;align-items:center;gap:0.9rem;
+  font-size:0.9rem;
+}
+
+/* ─── GALLERY ─── */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--dark)}
+.gal-item{overflow:hidden;aspect-ratio:3/4}
+.gal-item img{width:100%;height:100%;object-fit:cover;object-position:top}
+
+/* ─── MARCAS ─── */
+.marca-cards{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
+.marca-card{background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.07);overflow:hidden}
+.marca-card img{width:100%;height:220px;object-fit:cover}
+.marca-body{padding:1.4rem}
+.marca-body h3{font-family:var(--serif);font-size:1.2rem;color:var(--rose-d)}
+.marca-body p{font-size:0.84rem;color:var(--gray);margin-top:0.6rem;line-height:1.7}
+.marca-tag{
+  display:inline-block;margin-top:0.9rem;
+  font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--gold);padding:0.28rem 0.7rem;
+}
+
+/* ─── CONTACTO ─── */
+.contacto{
+  background:linear-gradient(150deg,var(--rose-d) 0%,var(--terra) 100%);
+  padding:3.5rem 1.4rem;text-align:center;color:#fff;
+}
+.contacto .sec-title{color:#fff}
+.contacto .divider{background:var(--gold-l)}
+.contacto .eyebrow{color:var(--gold-l)}
+.c-subtitle{font-style:italic;font-size:0.88rem;opacity:.8;margin-bottom:2.5rem}
+.c-blocks{display:flex;flex-direction:column;gap:2rem;margin-bottom:2.5rem}
+.c-block .c-icon{font-size:1.8rem;margin-bottom:0.5rem}
+.c-block .c-label{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;opacity:.75;margin-bottom:0.3rem}
+.c-block .c-val{font-family:var(--serif);font-size:1.3rem}
+.c-block .c-sub{font-size:0.8rem;opacity:.75;margin-top:0.15rem}
+.c-hours{display:flex;justify-content:center;gap:3rem;margin-bottom:2rem;flex-wrap:wrap}
+.c-hour-day{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;opacity:.72}
+.c-hour-time{font-size:0.95rem;font-weight:700;margin-top:0.25rem}
+.c-note{font-size:0.84rem;opacity:.75;font-style:italic}
+
+/* ─── WHATSAPP FLOAT ─── */
+.wa-float{
+  position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;
+  width:54px;height:54px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(0,0,0,0.25);text-decoration:none;font-size:1.7rem;
+}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--dark);color:rgba(255,255,255,.45);
+  text-align:center;padding:2rem 1.4rem;font-size:0.75rem;letter-spacing:1px;
+}
+.foot-logo{font-family:var(--serif);font-size:1.4rem;color:#EDD5DC;margin-bottom:0.4rem;letter-spacing:3px}
+
+/* ─── ANIMATIONS ─── */
+.fade{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.fade.show{opacity:1;transform:none}
+
+/* ─── DESKTOP ENHANCEMENTS (min 768px) ─── */
+@media(min-width:768px){
+  nav{padding:1.1rem 3rem}
+  .hero{
+    display:grid;grid-template-columns:1fr 1fr;
+    align-items:center;text-align:left;
+    padding:6rem 4rem 4rem;gap:3rem;
+  }
+  .divider{margin:0 0 1.4rem}
+  .hero-sub{margin:0 0 2rem}
+  .hero-btns{flex-direction:row;max-width:none;margin:0}
+  .btn{display:inline-block;width:auto}
+  .hero-photo-wrap{width:100%;max-width:420px}
+  .bri-photos img:first-child{aspect-ratio:16/9}
+  .facial-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .prog-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .sec,.sec-dark,.sec-pink,.sec-white{padding:5rem 4rem}
+  .treats{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+  .c-blocks{flex-direction:row;justify-content:center;gap:4rem}
+  .split-img-full{height:420px}
+  .split-img-right{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .split-img-right img{height:100%;min-height:400px;object-fit:cover}
+  .gallery{grid-template-columns:repeat(4,1fr)}
+  .marca-cards{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+  .marca-card img{height:260px}
+  .apar-split{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+  .apar-split img{height:100%;min-height:500px;object-fit:cover;object-position:center}
+  .apar-split-text{padding:5rem 4rem}
+  .briyitte-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .briyitte-wrap .bri-info{padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:center}
+  .briyitte-wrap .bri-photos{margin-bottom:0}
+  .bri-photos img:first-child{aspect-ratio:4/3;height:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#inicio" class="nav-logo">r<span>✿</span>use</a>
+  <a href="https://instagram.com/rousebybriyitte" class="nav-ig">@rousebybriyitte</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="fade">
+    <span class="eyebrow">Estética Facial y Corporal · Panamá</span>
+    <h1 class="hero-title">
+      Transforma tu piel,<br><em>eleva tu energía.</em>
+    </h1>
+    <div class="divider"></div>
+    <p class="hero-sub">No es solo un facial. Es una experiencia diseñada para transformar tu piel desde adentro y elevar tu bienestar integral.</p>
+    <div class="hero-btns">
+      <a href="#faciales" class="btn btn-p">Ver Servicios</a>
+      <a href="#contacto" class="btn btn-o">Reservar Cita</a>
+    </div>
+  </div>
+  <div class="hero-photo-wrap fade">
+    <img class="hero-photo" src="images/img01.jpg" alt="Briyitte Rodríguez">
+    <div class="hero-badge">
+      <div class="badge-name">Briyitte Rodríguez</div>
+      <div class="badge-role">Dermocosmiatra · Esteticista</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote">
+  <p class="quote-txt">"No es solo un facial. Es una experiencia para transformar tu piel y elevar tu energía."</p>
+  <p class="quote-attr">— Rouse by Briyitte</p>
+</div>
+
+<!-- BRIYITTE -->
+<section class="sec-white" id="briyitte">
+  <div class="briyitte-wrap">
+    <div class="bri-photos fade">
+      <img src="images/img02.jpg" alt="Briyitte Rodríguez">
+      <img src="images/img03.jpg" alt="Briyitte">
+      <img src="images/img04.jpg" alt="Briyitte">
+    </div>
+    <div class="bri-info fade" style="padding:2rem 0 0">
+      <span class="eyebrow">La experta detrás de Rouse</span>
+      <h2 class="sec-title">Briyitte Rodríguez</h2>
+      <div class="divider" style="margin:0 0 1rem"></div>
+      <p class="sec-lead">Dermocosmiatra y Esteticista Cosmetóloga con formación internacional y una pasión genuina por transformar la piel de sus clientes.</p>
+      <div class="creds">
+        <div class="cred"><div class="cred-ic">🎓</div><div><div class="cred-h">Universidad de Cartagena</div><div class="cred-p">Egresada Facultad de Medicina — Dermocosmiatra</div></div></div>
+        <div class="cred"><div class="cred-ic">🌎</div><div><div class="cred-h">Formación Internacional</div><div class="cred-p">Técnicas certificadas en México, Colombia y Brasil</div></div></div>
+        <div class="cred"><div class="cred-ic">⭐</div><div><div class="cred-h">4 Años de Experiencia</div><div class="cred-p">Especialista en estética facial y corporal de alto resultado</div></div></div>
+        <div class="cred"><div class="cred-ic">🏆</div><div><div class="cred-h">Certificación Exclusiva en Panamá</div><div class="cred-p">Única estética certificada en la Técnica Nazaret Santos desde Brasil</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACIALES -->
+<section class="sec" id="faciales">
+  <div class="fade">
+    <span class="eyebrow">Servicios Premium</span>
+    <h2 class="sec-title">Experiencias Faciales<br>de Alto Resultado</h2>
+    <div class="divider" style="margin:0 0 1rem"></div>
+    <p class="sec-lead">Cada facial es un ritual personalizado con resultados visibles desde la primera sesión.</p>
+  </div>
+  <div class="facial-cards">
+    <div class="fcard fade">
+      <div class="fcard-head">
+        <h3>Facial Reset Glow</h3>
+        <div class="fcard-price">$85</div>
+        <div class="fcard-dur">60 minutos</div>
+      </div>
+      <div class="fcard-body">
+        <p class="fcard-sub">Iluminación &amp; equilibrio inmediato</p>
+        <ul class="fcard-list">
+          <li>Limpieza + Exfoliación</li>
+          <li>Masaje drenante</li>
+          <li>Activos iluminadores</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fcard fade">
+      <div class="fcard-head t">
+        <h3>Facial Sculpt &amp; Lift</h3>
+        <div class="fcard-price">$100</div>
+        <div class="fcard-dur">75 minutos</div>
+      </div>
+      <div class="fcard-body">
+        <p class="fcard-sub">Definición &amp; firmeza facial</p>
+        <ul class="fcard-list">
+          <li>Escultura &amp; Radiofrecuencia</li>
+          <li>Mascarilla Lifting</li>
+          <li>Cierre reafirmante</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fcard fade">
+      <div class="fcard-head d">
+        <h3>Facial Pro Regen &amp; Glow</h3>
+        <div class="fcard-price">$110</div>
+        <div class="fcard-dur">75–90 minutos</div>
+      </div>
+      <div class="fcard-body">
+        <p class="fcard-sub">Renovación profunda &amp; resultados visibles</p>
+        <ul class="fcard-list">
+          <li>Peeling o Dermapen</li>
+          <li>Activos regeneradores</li>
+          <li>Fototerapia reparadora</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Price tables -->
+  <div class="ptbl fade" style="margin-top:2rem">
+    <h3>Higienizaciones Faciales</h3>
+    <div class="prow"><span class="srv">Profunda</span><span class="prx">$40</span></div>
+    <div class="prow"><span class="srv">Piel madura</span><span class="prx">$50</span></div>
+    <div class="prow"><span class="srv">Caballeros</span><span class="prx">$40</span></div>
+    <div class="prow"><span class="srv">Piel con tendencia acné</span><span class="prx">$50</span></div>
+    <div class="prow"><span class="srv">Limpieza facial juvenil <small>12 a 18 años</small></span><span class="prx">$35</span></div>
+  </div>
+  <div class="ptbl fade">
+    <h3>Tratamientos Faciales</h3>
+    <div class="prow"><span class="srv">Discromías <small>manchas, melasma, post acné</small></span><span class="prx">$120</span></div>
+    <div class="prow"><span class="srv">Piel madura efecto lifting</span><span class="prx">$90</span></div>
+    <div class="prow"><span class="srv">Hidratación profunda</span><span class="prx">$90</span></div>
+    <div class="prow"><span class="srv">Tratamiento de acné grado 1</span><span class="prx">$90</span></div>
+  </div>
+</section>
+
+<!-- SUMMER RESET -->
+<section class="sec-white">
+  <img class="split-img-full fade" src="images/img05.jpg" alt="The Summer Reset">
+  <div class="split-text fade">
+    <span class="eyebrow">Tratamiento Especial</span>
+    <h2 class="sec-title">The Summer Reset</h2>
+    <div class="divider" style="margin:0 0 1rem"></div>
+    <p class="split-kicker">Facial calmante de emergencia</p>
+    <p class="sec-lead">Diseñado para pieles sensibles o sensibilizadas — proporciona un efecto calmante instantáneo para piel con rojeces. Con la línea Germaine de Capuccini B-Calm.</p>
+  </div>
+</section>
+
+<!-- CORPORALES PROGRAMS -->
+<section class="sec-dark" id="corporales">
+  <div class="fade">
+    <span class="eyebrow" style="color:var(--gold)">Planes Exclusivos</span>
+    <h2 class="dark-title">Tratamientos Corporales</h2>
+    <div class="divider" style="background:var(--gold);margin:0 0 1rem"></div>
+    <p class="dark-lead">Programas con técnicas exclusivas e instrumentos certificados. Resultados reales, sin dolor.</p>
+  </div>
+  <div class="prog-cards">
+    <div class="prog-card fade">
+      <span class="prog-badge">10 sesiones · 2 por semana</span>
+      <h3>Rouse Infinity Body</h3>
+      <p>Tratamiento de lujo para resultados visibles. La mejor tecnología al servicio de tu figura con aparatología estética integrada.</p>
+      <ul class="prog-list">
+        <li>Reducción de medidas</li>
+        <li>Definición corporal</li>
+        <li>Experiencia premium</li>
+      </ul>
+    </div>
+    <div class="prog-card fade">
+      <span class="prog-badge">10 sesiones · 2 por semana</span>
+      <h3>Rouse Redefine 360</h3>
+      <p>Tu transformación integral: plan completo que combina varias técnicas para redefinir tu cuerpo desde todos los ángulos.</p>
+      <ul class="prog-list">
+        <li>Remodelación total</li>
+        <li>Tonificación profunda</li>
+        <li>Resultados globales</li>
+      </ul>
+    </div>
+    <div class="prog-card fade">
+      <span class="prog-badge">10 sesiones · 2 por semana</span>
+      <h3>Rouse Detox &amp; Shape</h3>
+      <p>Libera tu cuerpo de toxinas mientras moldeamos tu figura. Combinación perfecta de drenaje y técnicas anticelulíticas.</p>
+      <ul class="prog-list">
+        <li>Desintoxicación profunda</li>
+        <li>Reducción de celulitis</li>
+        <li>Sensación de ligereza</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MADEROTERAPIA SPLIT -->
+<section class="sec-pink">
+  <img class="split-img-full fade" src="images/img06.jpg" alt="Maderoterapia Rouse" style="border-radius:4px;margin-bottom:1.5rem">
+  <div class="fade">
+    <span class="eyebrow">Técnica Exclusiva</span>
+    <h2 class="sec-title">Maderoterapia</h2>
+    <div class="divider" style="margin:0 0 1rem"></div>
+    <p class="split-kicker">Instrumentos exclusivos de Golden Girls Miami</p>
+    <p class="sec-lead">Moldeamos y definimos tu figura con piezas de madera certificadas. Tratamientos exclusivos · Resultados sin dolor.</p>
+  </div>
+</section>
+
+<!-- INDIVIDUALES -->
+<section class="sec-pink" style="padding-top:0">
+  <div class="fade">
+    <span class="eyebrow">Precios Individuales</span>
+    <h2 class="sec-title">Corporales a la Carta</h2>
+    <div class="divider" style="margin:0 0 0.5rem"></div>
+  </div>
+  <div class="treats">
+    <div class="treat fade"><div class="treat-n">Drenaje linfático</div><div class="treat-p">$50</div></div>
+    <div class="treat fade"><div class="treat-n">Drenaje en frío <small>Técnica Detox con metalterapia</small></div><div class="treat-p">$60</div></div>
+    <div class="treat fade"><div class="treat-n">Masajes reductores/moldeadores <small>Plan 10 sesiones</small></div><div class="treat-p">$380</div></div>
+    <div class="treat fade"><div class="treat-n">Levantamiento de glúteos <small>Plan 4 sesiones</small></div><div class="treat-p">$140</div></div>
+    <div class="treat fade"><div class="treat-n">Técnica Nazaret Santos <small>Única en Panamá · por sesión</small></div><div class="treat-p">$70</div></div>
+    <div class="treat fade"><div class="treat-n">Técnica Nazaret Santos <small>Plan 5 sesiones</small></div><div class="treat-p">$250</div></div>
+  </div>
+  <div class="note fade">★ Todos los protocolos corporales son bajo previa evaluación — planes 100% personalizados.</div>
+</section>
+
+<!-- APARATOLOGÍA -->
+<section class="sec-white" id="tecnologia">
+  <div class="apar-split">
+    <div class="apar-split-text fade" style="padding:2rem 0">
+      <span class="eyebrow">Tecnología de Vanguardia</span>
+      <h2 class="sec-title">Aparatología<br>Estética</h2>
+      <div class="divider" style="margin:0 0 1rem"></div>
+      <p class="sec-lead">Equipos de última generación con piezas certificadas internacionalmente para potenciar cada tratamiento.</p>
+      <ul class="tech-list">
+        <li class="tech-item"><span>⚡</span> Radio Frecuencia</li>
+        <li class="tech-item"><span>💫</span> Tensa Más</li>
+        <li class="tech-item"><span>🔊</span> Ultrasonido</li>
+        <li class="tech-item"><span>🌀</span> Cavitación</li>
+        <li class="tech-item"><span>💨</span> Vacumterapia</li>
+      </ul>
+      <p style="margin-top:1.5rem;font-size:0.8rem;color:var(--gray);line-height:1.7">
+        <b style="color:var(--dark)">Metalterapia:</b> Piezas certificadas de Colombia — Figuras Red<br><br>
+        <b style="color:var(--dark)">Maderoterapia:</b> Piezas exclusivas de Golden Girls Miami
+      </p>
+    </div>
+    <img src="images/img07.jpg" alt="Aparatología" class="fade" style="width:100%;height:320px;object-fit:cover;object-position:center;margin-top:1.5rem">
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<div class="gallery">
+  <div class="gal-item"><img src="images/img08.jpg" alt="Briyitte"></div>
+  <div class="gal-item"><img src="images/img09.jpg" alt="Briyitte"></div>
+  <div class="gal-item"><img src="images/img10.jpg" alt="Briyitte"></div>
+  <div class="gal-item"><img src="images/img11.jpg" alt="Briyitte"></div>
+</div>
+
+<!-- MARCAS -->
+<section class="sec" id="marcas">
+  <div class="fade">
+    <span class="eyebrow">Calidad Premium</span>
+    <h2 class="sec-title">Líneas de Productos</h2>
+    <div class="divider" style="margin:0 0 1rem"></div>
+    <p class="sec-lead">Marcas de prestigio internacional, seleccionadas por su eficacia clínica y resultados comprobados.</p>
+  </div>
+  <div class="marca-cards">
+    <div class="marca-card fade">
+      <img src="images/img12.jpg" alt="Germaine de Capuccini">
+      <div class="marca-body">
+        <h3>Germaine de Capuccini</h3>
+        <p>Marca española de cosmética avanzada reconocida mundialmente. Línea B-Calm para pieles sensibles e intolerantes con pruebas clínicas.</p>
+        <span class="marca-tag">Faciales · Pieles Sensibles</span>
+      </div>
+    </div>
+    <div class="marca-card fade">
+      <img src="images/img13.jpg" alt="Yonka Paris">
+      <div class="marca-body">
+        <h3>Yonka Paris</h3>
+        <p>La referencia francesa en cosmética profesional con plantas aromáticas. Línea exclusiva Yonka For Men y protocolos juveniles Bioage.</p>
+        <span class="marca-tag">Facial · Caballeros · Juvenil</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <span class="eyebrow">Agenda tu experiencia</span>
+  <h2 class="sec-title" style="color:#fff;font-family:Georgia,serif">Reserva tu Cita</h2>
+  <div class="divider" style="background:var(--gold-l);margin:0.8rem auto 0.5rem"></div>
+  <p class="c-subtitle">Atención personalizada · Solo 3 cupos diarios</p>
+  <div class="c-blocks">
+    <div class="c-block fade">
+      <div class="c-icon">📱</div>
+      <div class="c-label">WhatsApp</div>
+      <div class="c-val">6239-4635</div>
+    </div>
+    <div class="c-block fade">
+      <div class="c-icon">📍</div>
+      <div class="c-label">Ubicación</div>
+      <div class="c-val">Brisas del Golf</div>
+      <div class="c-sub">Power Club · Panamá</div>
+    </div>
+    <div class="c-block fade">
+      <div class="c-icon">📸</div>
+      <div class="c-label">Instagram</div>
+      <div class="c-val">@rousebybriyitte</div>
+    </div>
+  </div>
+  <div class="c-hours fade">
+    <div><div class="c-hour-day">Lunes a Viernes</div><div class="c-hour-time">8:00 AM – 7:00 PM</div></div>
+    <div><div class="c-hour-day">Sábados</div><div class="c-hour-time">8:00 AM – 4:00 PM</div></div>
+  </div>
+  <p class="c-note fade">★ Atención bajo previa cita únicamente</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">rouse</div>
+  <p>Estética Facial y Corporal · @rousebybriyitte · Panamá</p>
+  <p style="margin-top:0.5rem;opacity:.4">© 2026 Rouse by Briyitte</p>
+</footer>
+
+<!-- WhatsApp Float Button -->
+<a class="wa-float" href="https://wa.me/5076239-4635" title="WhatsApp">💬</a>
+
+<script>
+// Fade-in on scroll
+const io = new IntersectionObserver(
+  entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show') }),
+  {threshold:0.08, rootMargin:'0px 0px -30px 0px'}
+);
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+// Nav shadow
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.boxShadow =
+    scrollY > 60 ? '0 3px 16px rgba(0,0,0,.1)' : '0 2px 12px rgba(0,0,0,.06)';
+}, {passive:true});
+</script>
+</body>
+</html>
