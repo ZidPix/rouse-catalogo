@@ -272,6 +272,16 @@ nav{
 .c-note{font-size:0.84rem;opacity:.75;font-style:italic}
 
 /* ─── WHATSAPP FLOAT ─── */
+  .wa-contact{
+  text-decoration:none;
+  color:inherit;
+  transition:transform .25s ease, opacity .25s ease;
+}
+
+.wa-contact:hover{
+  transform:translateY(-3px);
+  opacity:.9;
+}
 .wa-float{
   position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;
   width:54px;height:54px;border-radius:50%;
@@ -610,10 +620,15 @@ footer{
   <p class="c-subtitle">Atención personalizada · Solo 3 cupos diarios</p>
   <div class="c-blocks">
     <div class="c-block fade">
-      <div class="c-icon">📱</div>
-      <div class="c-label">WhatsApp</div>
-      <div class="c-val">6239-4635</div>
-    </div>
+     <a class="c-block fade wa-contact"
+   href="https://wa.me/50762394635?text=Hola,%20quiero%20agendar%20una%20cita"
+   target="_blank">
+
+  <div class="c-icon">📱</div>
+  <div class="c-label">WhatsApp</div>
+  <div class="c-val">6239-4635</div>
+
+</a>
     <div class="c-block fade">
       <div class="c-icon">📍</div>
       <div class="c-label">Ubicación</div>
@@ -641,7 +656,12 @@ footer{
 </footer>
 
 <!-- WhatsApp Float Button -->
-<a class="wa-float" href="https://wa.me/5076239-4635" title="WhatsApp">💬</a>
+<a class="wa-float"
+   href="https://wa.me/50762394635?text=Hola,%20quiero%20agendar%20una%20cita"
+   target="_blank"
+   title="WhatsApp">
+   💬
+</a>
 
 <script>
 // Fade-in on scroll
