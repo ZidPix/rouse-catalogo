@@ -130,8 +130,8 @@ nav{
 
 /* ─── BRIYITTE SECTION ─── */
 .bri-photos{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:2rem}
-.bri-photos img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top}
-.bri-photos img:first-child{grid-column:1/-1;aspect-ratio:4/3}
+.bri-photos img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top center;border-radius:10px}
+.bri-photos img:first-child{grid-column:1/-1;aspect-ratio:4/3;object-position:center 30%;border-radius:12px}
 .creds{margin-top:1.8rem;display:flex;flex-direction:column;gap:1.2rem}
 .cred{display:flex;gap:1rem;align-items:flex-start}
 .cred-ic{
@@ -144,7 +144,7 @@ nav{
 
 /* ─── FACIAL CARDS ─── */
 .facial-cards{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem}
-.fcard{background:#fff;box-shadow:0 4px 20px rgba(139,99,88,.08);overflow:hidden}
+.fcard{background:#fff;box-shadow:0 4px 20px rgba(139,99,88,.08);overflow:hidden;border-radius:8px}
 .fcard-head{padding:1.5rem 1.4rem;color:#fff;background:var(--rose-d)}
 .fcard-head.t{background:var(--terra)}
 .fcard-head.d{background:#4A2830}
@@ -163,7 +163,7 @@ nav{
 .fcard-list li::before{content:'✓';color:var(--gold);font-weight:bold;flex-shrink:0}
 
 /* ─── PRICE TABLES ─── */
-.ptbl{background:#fff;padding:1.5rem;margin-top:1.2rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.ptbl{background:#fff;padding:1.5rem;margin-top:1.2rem;box-shadow:0 2px 12px rgba(0,0,0,.05);border-radius:8px}
 .ptbl h3{
   font-family:var(--serif);font-size:1.1rem;color:var(--rose-d);
   padding-bottom:0.75rem;border-bottom:2px solid var(--gold);margin-bottom:0.3rem;
@@ -188,6 +188,7 @@ nav{
   background:rgba(255,255,255,.05);
   border:1px solid rgba(196,137,154,.2);
   padding:2rem 1.4rem;position:relative;overflow:hidden;
+  border-radius:8px;
 }
 .prog-card::before{
   content:'';position:absolute;top:0;left:0;right:0;
@@ -215,6 +216,7 @@ nav{
   background:#fff;padding:1.1rem 1.4rem;
   display:flex;justify-content:space-between;align-items:center;
   border-left:3px solid var(--rose);
+  border-radius:0 6px 6px 0;
 }
 .treat-n{font-size:0.88rem;color:var(--dark)}
 .treat-n small{display:block;font-size:0.75rem;color:var(--gray);margin-top:0.15rem}
@@ -223,6 +225,7 @@ nav{
   background:var(--rose-l);border-left:4px solid var(--rose-d);
   padding:1rem 1.3rem;margin-top:1.5rem;
   font-size:0.84rem;color:var(--rose-d);font-style:italic;
+  border-radius:0 6px 6px 0;
 }
 
 /* ─── TECH LIST ─── */
@@ -232,17 +235,18 @@ nav{
   border-right:3px solid var(--gold);
   display:flex;align-items:center;gap:0.9rem;
   font-size:0.9rem;
+  border-radius:6px 0 0 6px;
 }
 
 /* ─── GALLERY ─── */
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--dark)}
 .gal-item{overflow:hidden;aspect-ratio:3/4}
-.gal-item img{width:100%;height:100%;object-fit:cover;object-position:top}
+.gal-item img{width:100%;height:100%;object-fit:cover;object-position:top center}
 
 /* ─── MARCAS ─── */
 .marca-cards{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
-.marca-card{background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.07);overflow:hidden}
-.marca-card img{width:100%;height:220px;object-fit:cover}
+.marca-card{background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.07);overflow:hidden;border-radius:12px}
+.marca-card img{width:100%;height:220px;object-fit:cover;object-position:center 30%}
 .marca-body{padding:1.4rem}
 .marca-body h3{font-family:var(--serif);font-size:1.2rem;color:var(--rose-d)}
 .marca-body p{font-size:0.84rem;color:var(--gray);margin-top:0.6rem;line-height:1.7}
@@ -271,23 +275,27 @@ nav{
 .c-hour-time{font-size:0.95rem;font-weight:700;margin-top:0.25rem}
 .c-note{font-size:0.84rem;opacity:.75;font-style:italic}
 
-/* ─── WHATSAPP FLOAT ─── */
-  .wa-contact{
+/* ─── WHATSAPP CONTACT ─── */
+.wa-contact{
   text-decoration:none;
   color:inherit;
   transition:transform .25s ease, opacity .25s ease;
 }
-
 .wa-contact:hover{
   transform:translateY(-3px);
   opacity:.9;
 }
+
+/* ─── WHATSAPP FLOAT ─── */
 .wa-float{
-  position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;
-  width:54px;height:54px;border-radius:50%;
-  background:#25D366;display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 16px rgba(0,0,0,0.25);text-decoration:none;font-size:1.7rem;
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:58px;height:58px;border-radius:50%;
+  background:#25D366;color:#fff;font-size:1.6rem;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.45);
+  animation:wa-pulse 2.5s infinite;
 }
+@keyframes wa-pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)}50%{box-shadow:0 4px 32px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.12)}}
 
 /* ─── FOOTER ─── */
 footer{
@@ -324,14 +332,14 @@ footer{
   .split-img-right img{height:100%;min-height:400px;object-fit:cover}
   .gallery{grid-template-columns:repeat(4,1fr)}
   .marca-cards{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-  .marca-card img{height:260px}
+  .marca-card img{height:260px;object-position:center 30%}
   .apar-split{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
-  .apar-split img{height:100%;min-height:500px;object-fit:cover;object-position:center}
+  .apar-split img{height:100%;min-height:500px;object-fit:cover;object-position:top center}
   .apar-split-text{padding:5rem 4rem}
   .briyitte-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
   .briyitte-wrap .bri-info{padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:center}
   .briyitte-wrap .bri-photos{margin-bottom:0}
-  .bri-photos img:first-child{aspect-ratio:4/3;height:auto}
+  .bri-photos img:first-child{aspect-ratio:4/3;height:auto;object-position:center 25%}
 }
 </style>
 </head>
@@ -470,7 +478,8 @@ footer{
 
 <!-- SUMMER RESET -->
 <section class="sec-white">
-  <img class="split-img-full fade" src="images/img05.jpg" alt="The Summer Reset">
+  <img class="split-img-full fade" src="images/img05.jpg" alt="The Summer Reset"
+       style="height:auto;max-width:560px;display:block;margin:0 auto 1.5rem;border-radius:14px">
   <div class="split-text fade">
     <span class="eyebrow">Tratamiento Especial</span>
     <h2 class="sec-title">The Summer Reset</h2>
@@ -524,7 +533,8 @@ footer{
 
 <!-- MADEROTERAPIA SPLIT -->
 <section class="sec-pink">
-  <img class="split-img-full fade" src="images/img06.jpg" alt="Maderoterapia Rouse" style="border-radius:4px;margin-bottom:1.5rem">
+  <img class="split-img-full fade" src="images/img06.jpg" alt="Maderoterapia Rouse"
+       style="border-radius:14px;margin-bottom:1.5rem;object-position:top center">
   <div class="fade">
     <span class="eyebrow">Técnica Exclusiva</span>
     <h2 class="sec-title">Maderoterapia</h2>
@@ -572,7 +582,8 @@ footer{
         <b style="color:var(--dark)">Maderoterapia:</b> Piezas exclusivas de Golden Girls Miami
       </p>
     </div>
-    <img src="images/img07.jpg" alt="Aparatología" class="fade" style="width:100%;height:320px;object-fit:cover;object-position:center;margin-top:1.5rem">
+    <img src="images/img07.jpg" alt="Aparatología" class="fade"
+         style="width:100%;height:320px;object-fit:cover;object-position:top center;margin-top:1.5rem;border-radius:14px">
   </div>
 </section>
 
@@ -620,15 +631,14 @@ footer{
   <p class="c-subtitle">Atención personalizada · Solo 3 cupos diarios</p>
   <div class="c-blocks">
     <div class="c-block fade">
-     <a class="c-block fade wa-contact"
-   href="https://wa.me/50762394635?text=Hola,%20quiero%20agendar%20una%20cita"
-   target="_blank">
-
-  <div class="c-icon">📱</div>
-  <div class="c-label">WhatsApp</div>
-  <div class="c-val">6239-4635</div>
-
-</a>
+      <a class="c-block fade wa-contact"
+         href="https://wa.me/50762394635?text=Hola,%20quiero%20agendar%20una%20cita"
+         target="_blank">
+        <div class="c-icon">📱</div>
+        <div class="c-label">WhatsApp</div>
+        <div class="c-val">6239-4635</div>
+      </a>
+    </div>
     <div class="c-block fade">
       <div class="c-icon">📍</div>
       <div class="c-label">Ubicación</div>
@@ -660,7 +670,7 @@ footer{
    href="https://wa.me/50762394635?text=Hola,%20quiero%20agendar%20una%20cita"
    target="_blank"
    title="WhatsApp">
-   💬
+  💬
 </a>
 
 <script>
