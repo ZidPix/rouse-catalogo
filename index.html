@@ -297,6 +297,34 @@ nav{
 }
 @keyframes wa-pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)}50%{box-shadow:0 4px 32px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.12)}}
 
+/* ─── SHOP / CUIDADO EN CASA ─── */
+.shop-cards{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
+.shop-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 24px rgba(139,99,88,.1)}
+.shop-card-img{width:100%;height:220px;object-fit:contain;background:#f8f4f2;padding:1rem}
+.shop-card-img.cover{object-fit:cover;background:none;padding:0}
+.shop-card-header{
+  width:100%;height:160px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0.4rem;text-align:center;padding:1rem;
+}
+.shop-line{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.95);font-weight:700}
+.shop-brand{font-family:var(--serif);font-size:1.05rem;color:#fff;font-style:italic;opacity:0.9}
+.shop-body{padding:1.4rem}
+.shop-body h3{font-family:var(--serif);font-size:1.1rem;color:var(--dark);margin-bottom:0.4rem}
+.shop-sub{font-size:0.8rem;color:var(--gray);line-height:1.65;margin-bottom:1.1rem}
+.shop-price-row{display:flex;align-items:center;justify-content:space-between;gap:0.8rem;flex-wrap:wrap}
+.shop-price{font-size:1.7rem;font-weight:900;color:var(--rose-d);line-height:1}
+.shop-price small{font-size:0.65rem;font-weight:400;color:var(--gray);display:block;margin-top:0.15rem;letter-spacing:1px}
+.shop-wa{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  background:#25D366;color:#fff;text-decoration:none;
+  font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;
+  padding:0.6rem 1rem;border-radius:50px;white-space:nowrap;
+}
+@media(min-width:768px){
+  .shop-cards{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+}
+
 /* ─── FOOTER ─── */
 footer{
   background:var(--dark);color:rgba(255,255,255,.45);
@@ -673,6 +701,80 @@ footer{
       </div>
     </div>
   </div>
+</section>
+
+<!-- CUIDADO EN CASA -->
+<section class="sec-pink" id="tienda">
+  <div class="fade">
+    <span class="eyebrow">Lleva Rouse a tu Hogar</span>
+    <h2 class="sec-title">Cuidado en Casa</h2>
+    <div class="divider" style="margin:0 0 1rem"></div>
+    <p class="sec-lead">Productos profesionales Germaine de Capuccini, seleccionados por Briyitte para que continúes tu rutina en casa con resultados de cabina.</p>
+  </div>
+  <div class="shop-cards">
+
+    <!-- Producto 1 -->
+    <div class="shop-card fade">
+      <img class="shop-card-img" src="images/img17.jpeg" alt="Timexpert SRNS Day &amp; Night">
+      <div class="shop-body">
+        <h3>Timexpert SRNS · Day &amp; Night</h3>
+        <p class="shop-sub">Dúo antiedad de alta performance. Crema de día regeneradora + crema de noche reparadora. Ideal para pieles que necesitan nutrición intensa y regeneración celular profunda.</p>
+        <div class="shop-price-row">
+          <div class="shop-price">$135<small>precio referencial</small></div>
+          <a class="shop-wa" href="https://wa.me/50762394635?text=Hola,%20quiero%20comprar%20el%20Timexpert%20SRNS%20Day%20%26%20Night" target="_blank">
+            📱 Pedir
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="shop-card fade">
+      <img class="shop-card-img cover" src="images/img18.jpeg" alt="Timexpert Hydraluronic">
+      <div class="shop-body">
+        <h3>Timexpert Hydraluronic</h3>
+        <p class="shop-sub">Set de hidratación profunda con ácido hialurónico puro. Crema Rich Sorbet, Gel-Crema Soft Sorbet y Sérum 3D Force — hidratación redensificante de larga duración.</p>
+        <div class="shop-price-row">
+          <div class="shop-price">$115<small>precio referencial</small></div>
+          <a class="shop-wa" href="https://wa.me/50762394635?text=Hola,%20quiero%20comprar%20el%20Timexpert%20Hydraluronic" target="_blank">
+            📱 Pedir
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="shop-card fade">
+      <img class="shop-card-img" src="images/img19.jpeg" alt="B-Calm Back to You">
+      <div class="shop-body">
+        <h3>B-Calm · Back to You</h3>
+        <p class="shop-sub">Kit calmante para pieles sensibles o sensibilizadas. Gel micelar de agua B-Calm + crema calmante — calma rojeces e irritación de forma inmediata y duradera.</p>
+        <div class="shop-price-row">
+          <div class="shop-price">$75<small>precio referencial</small></div>
+          <a class="shop-wa" href="https://wa.me/50762394635?text=Hola,%20quiero%20comprar%20el%20B-Calm%20Back%20to%20You" target="_blank">
+            📱 Pedir
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="shop-card fade">
+      <img class="shop-card-img" src="images/img20.jpeg" alt="Purexpert Rutina 3 Pasos">
+      <div class="shop-body">
+        <h3>Purexpert · Rutina 3 Pasos</h3>
+        <p class="shop-sub">Sistema purificante completo para piel grasa o mixta. Espuma purificante + Esencia refinadora + Gel-crema oil-free — poros reducidos y acabado mate todo el día.</p>
+        <div class="shop-price-row">
+          <div class="shop-price">$95<small>precio referencial</small></div>
+          <a class="shop-wa" href="https://wa.me/50762394635?text=Hola,%20quiero%20comprar%20el%20Purexpert%20Rutina%203%20Pasos" target="_blank">
+            📱 Pedir
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="note fade" style="margin-top:1.5rem">🛍️ Todos los productos incluyen asesoría personalizada de Briyitte · Consulta disponibilidad por WhatsApp</div>
 </section>
 
 <!-- CONTACTO -->
