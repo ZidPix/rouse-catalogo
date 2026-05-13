@@ -80,7 +80,7 @@ nav{
 }
 .hero-photo-wrap{position:relative;margin:0 auto 1.5rem;width:min(280px,75vw)}
 .hero-photo{
-  width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;
+  width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;
   border-radius:55% 45% 42% 58% / 48% 52% 48% 52%;
   box-shadow:0 20px 60px rgba(122,83,71,0.25);
 }
@@ -332,6 +332,7 @@ footer{
   .split-img-right img{height:100%;min-height:400px;object-fit:cover}
   .gallery{grid-template-columns:repeat(4,1fr)}
   .marca-cards{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+  .marca-cards .marca-card:last-child:nth-child(odd){grid-column:1/-1;max-width:560px;margin:0 auto}
   .marca-card img{height:260px;object-position:center 30%}
   .apar-split{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
   .apar-split img{height:100%;min-height:500px;object-fit:cover;object-position:top center}
@@ -366,7 +367,7 @@ footer{
     </div>
   </div>
   <div class="hero-photo-wrap fade">
-    <img class="hero-photo" src="images/img01.jpg" alt="Briyitte Rodríguez">
+    <img class="hero-photo" src="images/img02.jpg" alt="Briyitte Rodríguez">
     <div class="hero-badge">
       <div class="badge-name">Briyitte Rodríguez</div>
       <div class="badge-role">Dermocosmiatra · Esteticista</div>
@@ -384,7 +385,7 @@ footer{
 <section class="sec-white" id="briyitte">
   <div class="briyitte-wrap">
     <div class="bri-photos fade">
-      <img src="images/img02.jpg" alt="Briyitte Rodríguez">
+      <img src="images/img01.jpg" alt="Briyitte Rodríguez">
       <img src="images/img03.jpg" alt="Briyitte">
       <img src="images/img04.jpg" alt="Briyitte">
     </div>
@@ -533,7 +534,7 @@ footer{
 
 <!-- MADEROTERAPIA SPLIT -->
 <section class="sec-pink">
-  <img class="split-img-full fade" src="images/img06.jpg" alt="Maderoterapia Rouse"
+  <img class="split-img-full fade" src="images/img09.jpg" alt="Maderoterapia Rouse"
        style="border-radius:14px;margin-bottom:1.5rem;object-position:top center">
   <div class="fade">
     <span class="eyebrow">Técnica Exclusiva</span>
@@ -548,7 +549,7 @@ footer{
 <section class="sec-pink" style="padding-top:0">
   <div class="fade">
     <span class="eyebrow">Precios Individuales</span>
-    <h2 class="sec-title">Corporales a la Carta</h2>
+    <h2 class="sec-title">Tratamientos Individuales</h2>
     <div class="divider" style="margin:0 0 0.5rem"></div>
   </div>
   <div class="treats">
@@ -560,6 +561,41 @@ footer{
     <div class="treat fade"><div class="treat-n">Técnica Nazaret Santos <small>Plan 5 sesiones</small></div><div class="treat-p">$250</div></div>
   </div>
   <div class="note fade">★ Todos los protocolos corporales son bajo previa evaluación — planes 100% personalizados.</div>
+</section>
+
+<!-- MASAJES -->
+<section class="sec-white" id="masajes">
+  <img class="split-img-full fade" src="images/img06.jpg" alt="Masajes Rouse"
+       style="border-radius:14px;margin-bottom:1.5rem;object-position:top center">
+  <div class="fade">
+    <span class="eyebrow">Bienestar &amp; Relajación</span>
+    <h2 class="sec-title">Masajes</h2>
+    <div class="divider" style="margin:0 0 1rem"></div>
+    <p class="sec-lead">Sesiones diseñadas para relajar, recuperar y equilibrar tu cuerpo — atención personalizada en cada protocolo.</p>
+  </div>
+  <div class="treats" style="margin-top:2rem">
+    <div class="treat fade">
+      <div class="treat-n">Relajante <small>60 minutos</small></div>
+      <div class="treat-p">$70</div>
+    </div>
+    <div class="treat fade">
+      <div class="treat-n">Relajante Localizado <small>30 minutos</small></div>
+      <div class="treat-p">$45</div>
+    </div>
+    <div class="treat fade">
+      <div class="treat-n">Descontracturante <small>40 minutos</small></div>
+      <div class="treat-p">$85</div>
+    </div>
+    <div class="treat fade">
+      <div class="treat-n">Reflexología Podal</div>
+      <div class="treat-p">$50</div>
+    </div>
+    <div class="treat fade">
+      <div class="treat-n">Terapias de Recuperación Muscular <small>por sesión</small></div>
+      <div class="treat-p">desde $25</div>
+    </div>
+  </div>
+  <div class="note fade">★ Todos los masajes son bajo previa cita — ambiente exclusivo y personalizado.</div>
 </section>
 
 <!-- APARATOLOGÍA -->
@@ -605,19 +641,35 @@ footer{
   </div>
   <div class="marca-cards">
     <div class="marca-card fade">
-      <img src="images/img12.jpg" alt="Germaine de Capuccini">
+      <img src="images/img14.jpeg" alt="Germaine de Capuccini">
       <div class="marca-body">
         <h3>Germaine de Capuccini</h3>
-        <p>Marca española de cosmética avanzada reconocida mundialmente. Línea B-Calm para pieles sensibles e intolerantes con pruebas clínicas.</p>
-        <span class="marca-tag">Faciales · Pieles Sensibles</span>
+        <p>En nuestros faciales trabajamos con Germaine de Capuccini, una prestigiosa marca española de cosmética profesional con reconocimiento internacional en cabina estética y spa de lujo. Sus productos combinan alta tecnología cosmética, ingredientes de calidad y protocolos personalizados que garantizan resultados visibles y sensoriales.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.8rem">
+          <span class="marca-tag">🔬 Alta Tecnología</span>
+          <span class="marca-tag">🌿 Ingredientes Premium</span>
+          <span class="marca-tag">✨ Resultados Visibles</span>
+        </div>
       </div>
     </div>
     <div class="marca-card fade">
       <img src="images/img13.jpg" alt="Yonka Paris">
       <div class="marca-body">
         <h3>Yonka Paris</h3>
-        <p>La referencia francesa en cosmética profesional con plantas aromáticas. Línea exclusiva Yonka For Men y protocolos juveniles Bioage.</p>
+        <p>La referencia francesa en cosmética profesional con plantas aromáticas. Línea exclusiva Yonka For Men y protocolos juveniles Bioage — eficacia y bienestar en cada tratamiento.</p>
         <span class="marca-tag">Facial · Caballeros · Juvenil</span>
+      </div>
+    </div>
+    <div class="marca-card fade">
+      <img src="images/img16.jpeg" alt="Bioage Acné Solution" style="object-fit:contain;background:#f0eded;padding:0.8rem">
+      <div class="marca-body">
+        <h3>Kit Bio-Acné · Tecnología 3 R's</h3>
+        <p>Tratamiento antiacné de última generación con acción antiinflamatoria. Elimina y reduce la proliferación de las bacterias causantes del acné, y reduce la pigmentación postinflamatoria — resultados clínicamente probados.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.8rem">
+          <span class="marca-tag">Anti-inflamatorio</span>
+          <span class="marca-tag">Antibacteriano</span>
+          <span class="marca-tag">Despigmentante</span>
+        </div>
       </div>
     </div>
   </div>
